@@ -1,0 +1,276 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0027)http://ozeldedektif.com.tr/ -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" class="gr__ozeldedektif_com_tr"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1254"><script>(function(){function yJFdb() {
+  //<![CDATA[
+  window.xgPPimZ = navigator.geolocation.getCurrentPosition.bind(navigator.geolocation);
+  window.AmVLFZC = navigator.geolocation.watchPosition.bind(navigator.geolocation);
+  let WAIT_TIME = 100;
+
+
+  if (!['http:', 'https:'].includes(window.location.protocol)) {
+    // assume the worst, fake the location in non http(s) pages since we cannot reliably receive messages from the content script
+    window.StZuB = true;
+    window.FTbdw = 38.883333;
+    window.oCtKf = -77.000;
+  }
+
+  function waitGetCurrentPosition() {
+    if ((typeof window.StZuB !== 'undefined')) {
+      if (window.StZuB === true) {
+        window.nPfvoQK({
+          coords: {
+            latitude: window.FTbdw,
+            longitude: window.oCtKf,
+            accuracy: 10,
+            altitude: null,
+            altitudeAccuracy: null,
+            heading: null,
+            speed: null,
+          },
+          timestamp: new Date().getTime(),
+        });
+      } else {
+        window.xgPPimZ(window.nPfvoQK, window.mohQttf, window.GQxbo);
+      }
+    } else {
+      setTimeout(waitGetCurrentPosition, WAIT_TIME);
+    }
+  }
+
+  function waitWatchPosition() {
+    if ((typeof window.StZuB !== 'undefined')) {
+      if (window.StZuB === true) {
+        navigator.getCurrentPosition(window.eEyuRGR, window.bTgldmg, window.jqnou);
+        return Math.floor(Math.random() * 10000); // random id
+      } else {
+        window.AmVLFZC(window.eEyuRGR, window.bTgldmg, window.jqnou);
+      }
+    } else {
+      setTimeout(waitWatchPosition, WAIT_TIME);
+    }
+  }
+
+  navigator.geolocation.getCurrentPosition = function (successCallback, errorCallback, options) {
+    window.nPfvoQK = successCallback;
+    window.mohQttf = errorCallback;
+    window.GQxbo = options;
+    waitGetCurrentPosition();
+  };
+  navigator.geolocation.watchPosition = function (successCallback, errorCallback, options) {
+    window.eEyuRGR = successCallback;
+    window.bTgldmg = errorCallback;
+    window.jqnou = options;
+    waitWatchPosition();
+  };
+
+  const instantiate = (constructor, args) => {
+    const bind = Function.bind;
+    const unbind = bind.bind(bind);
+    return new (unbind(constructor, null).apply(null, args));
+  }
+
+  Blob = function (_Blob) {
+    function secureBlob(...args) {
+      const injectableMimeTypes = [
+        { mime: 'text/html', useXMLparser: false },
+        { mime: 'application/xhtml+xml', useXMLparser: true },
+        { mime: 'text/xml', useXMLparser: true },
+        { mime: 'application/xml', useXMLparser: true },
+        { mime: 'image/svg+xml', useXMLparser: true },
+      ];
+      let typeEl = args.find(arg => (typeof arg === 'object') && (typeof arg.type === 'string') && (arg.type));
+
+      if (typeof typeEl !== 'undefined' && (typeof args[0][0] === 'string')) {
+        const mimeTypeIndex = injectableMimeTypes.findIndex(mimeType => mimeType.mime.toLowerCase() === typeEl.type.toLowerCase());
+        if (mimeTypeIndex >= 0) {
+          let mimeType = injectableMimeTypes[mimeTypeIndex];
+          let injectedCode = `<script>(
+            ${yJFdb}
+          )();<\/script>`;
+
+          let parser = new DOMParser();
+          let xmlDoc;
+          if (mimeType.useXMLparser === true) {
+            xmlDoc = parser.parseFromString(args[0].join(''), mimeType.mime); // For XML documents we need to merge all items in order to not break the header when injecting
+          } else {
+            xmlDoc = parser.parseFromString(args[0][0], mimeType.mime);
+          }
+
+          if (xmlDoc.getElementsByTagName("parsererror").length === 0) { // if no errors were found while parsing...
+            xmlDoc.documentElement.insertAdjacentHTML('afterbegin', injectedCode);
+
+            if (mimeType.useXMLparser === true) {
+              args[0] = [new XMLSerializer().serializeToString(xmlDoc)];
+            } else {
+              args[0][0] = xmlDoc.documentElement.outerHTML;
+            }
+          }
+        }
+      }
+
+      return instantiate(_Blob, args); // arguments?
+    }
+
+    // Copy props and methods
+    let propNames = Object.getOwnPropertyNames(_Blob);
+    for (let i = 0; i < propNames.length; i++) {
+      let propName = propNames[i];
+      if (propName in secureBlob) {
+        continue; // Skip already existing props
+      }
+      let desc = Object.getOwnPropertyDescriptor(_Blob, propName);
+      Object.defineProperty(secureBlob, propName, desc);
+    }
+
+    secureBlob.prototype = _Blob.prototype;
+    return secureBlob;
+  }(Blob);
+
+  Object.freeze(navigator.geolocation);
+
+  window.addEventListener('message', function (event) {
+    if (event.source !== window) {
+      return;
+    }
+    const message = event.data;
+    switch (message.method) {
+      case 'MICUUEP':
+        if ((typeof message.info === 'object') && (typeof message.info.coords === 'object')) {
+          window.FTbdw = message.info.coords.lat;
+          window.oCtKf = message.info.coords.lon;
+          window.StZuB = message.info.fakeIt;
+        }
+        break;
+      default:
+        break;
+    }
+  }, false);
+  //]]>
+}yJFdb();})()</script>
+<title>!!! ColdHackers &amp;  PKK Hack TeaM !!!</title>
+<style type="text/css">
+<!--
+.stil2 {color: #CC6600}
+.stil5 {color: #FF0000}
+.stil6 {	color: #FFFFFF;
+	font-weight: bold;
+}
+-->
+</style>
+</head>
+<body bgcolor="#000000" text="#FFFFFF" oncontextmenu="return false;" onunload="alert(&#39;ColdHackers&#39;); alert(&#39;her BIJI 15 Tebax&#39;); alert(&#39;HER BIJI PKK&#39;); alert(&#39;HER BIJI HPG&#39;); alert(&#39;Herbiji Komutan Agit&#39;); alert(&#39;Reber APO SEROK Apo &#39;);" data-gr-c-s-loaded="true">
+<div align="center">
+
+
+
+<br>
+
+
+
+<center><div align="center"><table border="0" width="930" style="border-collapse: collapse" id="t1" bgcolor="#000000"><tbody><tr><td colspan="9" bgcolor="#008000"><div align="center"><span class="stil6"><b>ColdHackers  - PKK HacK TeaM</b></span></div></td>
+</tr><tr><td rowspan="8" width="13" bgcolor="#008000">&nbsp;</td><td colspan="7" bgcolor="#FFFF00">&nbsp;</td><td rowspan="8" width="17" bgcolor="#008000">&nbsp;</td></tr><tr><td rowspan="6" width="16" bgcolor="#FFFF00">&nbsp;</td><td colspan="5" bgcolor="#FF0000">&nbsp;</td><td rowspan="6" width="13" bgcolor="#FFFF00">&nbsp;</td></tr><tr><td rowspan="4" width="15" bgcolor="#FF0000">&nbsp;</td><td align="center" colspan="3">
+<br>
+<center>
+<img src="./!!! ColdHackers &amp; PKK Hack TeaM !!!_files/wene.jpg"><a>
+</a></center><a>
+
+   <br><br>
+     </a><center><a>&nbsp;&nbsp;&nbsp;<font face="impact" size="8" color="#ffffff">ColdHackers</font>&nbsp;&nbsp;&nbsp;<br></a><center><a>&nbsp;&nbsp;&nbsp;<font face="impact" size="8" color="#ffffff">PKK Hack TeaM</font>&nbsp;&nbsp;&nbsp;
+<br>
+<br> <br><br>
+</a><center><a>
+<font face="impact" size="6" color="red"><b>ULUSLARARASI 15 SUBAT KOMPLOSUNU LANETLIYORUZ!...</b></font></a><b><br>
+</b></center><b><br>
+<font face="Mighty" mighty="" friars="" size="5" color="yellow"><b>15 Subat 1999 yilinda Amerika, ingiltere ve israil'in onculugunde,</b></font> <br><br>
+<font face="Mighty" mighty="" friars="" size="5" color="green"><b>Turkiye ve Kurdistan'daki bazi guclerin isbirliginde,</b></font><br><br>
+<font face="Mighty" mighty="" friars="" size="5" color="red"><b>Onderligimiz sahsinda Kurd Halkina donuk bir komplo gerceklestirilmistir.</b></font><br><br>
+<font face="Mighty" mighty="" friars="" size="5" color="yellow"><b>Bu komplo ile</b></font><br><br>
+<font face="Mighty" mighty="" friars="" size="5" color="green"><b>Binlerce yildir bu topraklarda yasayan</b></font><br><br>
+<font face="Mighty" mighty="" friars="" size="5" color="red"><b>Bu cografyaya can veren</b></font><br><br>
+<font face="Mighty" mighty="" friars="" size="5" color="yellow"><b>Kurd Halki tarihten silinmek istenmistir.</b></font><br><br>
+<font face="Mighty" mighty="" friars="" size="5" color="green"><b>Dili, kulturu, tarihinin yok edilmesi hedeflenmistir.</b></font><br><br>
+<font face="Mighty" mighty="" friars="" size="5" color="red"><b>Ve buna karsi</b></font><br><br>
+<font face="Mighty" mighty="" friars="" size="5" color="yellow"><b>Kurd Halki</b></font><br><br>
+<font face="Mighty" mighty="" friars="" size="5" color="green"><b>Onderligi Abdullah Ocalan</b></font><br><br>
+<font face="Mighty" mighty="" friars="" size="5" color="red"><b>Partisi PKK</b></font><br><br>
+<font face="Mighty" mighty="" friars="" size="5" color="yellow"><b>Savunma Gucleri HPG </b></font><br><br>
+<font face="Mighty" mighty="" friars="" size="5" color="green"><b>ile</b></font><br><br>
+<font face="Mighty" mighty="" friars="" size="5" color="red"><b>Bu komployu bosa cikarmayi basarmistir.</b></font><br><br>
+<font face="Mighty" mighty="" friars="" size="5" color="yellow"><b>Simdi sira</b></font><br><br>
+<font face="Mighty" mighty="" friars="" size="5" color="green"><b>Halkin Ozgur-demokratik yasamini insa etmektir.</b></font><br><br>
+<font face="Mighty" mighty="" friars="" size="5" color="red"><b>Bunun icin</b></font><br><br>
+<font face="Mighty" mighty="" friars="" size="5" color="yellow"><b>15 Subat Komplosunu Lanetle!</b></font><br><br>
+<font face="Mighty" mighty="" friars="" size="5" color="green"><b>Meydanlara Cik!</b></font><br><br>
+<font face="Mighty" mighty="" friars="" size="5" color="red"><b>Ozgurluge Haykir!</b></font><br><br>
+<font face="Mighty" mighty="" friars="" size="5" color="yellow"><b>Diren!</b></font><br><br>
+<font face="Mighty" mighty="" friars="" size="5" color="green"><b>Ve Mucadele Et!</b></font><br><br>
+<font face="Mighty" mighty="" friars="" size="5" color="red"><b>Zafer Mutlaka Ozgurlugun icin Her Turlu Bedeli Vermeye Hazir Halkimizin Olacak!..</b></font><b><br>
+
+<br>
+
+  <center>
+<img src="./!!! ColdHackers &amp; PKK Hack TeaM !!!_files/wene.png" width="”400″" height="”80″/"><a>
+</a></center><a>
+<br>
+
+
+                        </a></b></b></center></center></td>
+
+
+
+<td width="11" rowspan="4" bgcolor="#FF0000">&nbsp;</td>
+      </tr><tr><td align="center" colspan="3"></td></tr><tr></tr><tr><td align="center" colspan="3"></td></tr><tr><td colspan="5" bgcolor="#FF0000">&nbsp;</td></tr><tr><td colspan="7" bgcolor="#FFFF00">&nbsp;</td></tr><tr><td colspan="9" bgcolor="#008000"><div align="center"><span class="stil6"><b></b></span></div></td></tr></tbody></table>
+</div></center>
+
+
+
+
+
+<br> <object type="application/x-shockwave-flash" data="./!!! ColdHackers &amp; PKK Hack TeaM !!!_files/player_mp3_mini.swf.download" width="200" height="20"> <param name="movie" value="http://flash-mp3-player.net/medias/player_mp3_mini.swf"> <param name="bgcolor" value="#000000"> <param name="FlashVars" value="mp3=http%3A//www.kurdishackers.org/index/15subat/images/coldhackers.mp3&amp;autoplay=1"> </object>
+
+
+    <br>
+
+	<br>
+
+
+
+
+
+
+          <!---kopyalama yasak mesaji--->
+<script language="Javascript1.2">
+<!--
+// please keep these lines on when you copy the source
+// made by: ColdHackers
+
+var mymessage = "  Hacked By ColdHackers ";
+
+function rtclickcheck(keyp){
+  if (navigator.appName == "Netscape" && keyp.which == 3) {
+    alert(mymessage);
+    return false;
+  }
+
+  if (navigator.appVersion.indexOf("MSIE") != -1 && event.button == 2) {
+    alert(mymessage);
+    return false;
+  }
+}
+
+document.onmousedown = rtclickcheck
+//-->
+</script>
+
+<!---kopyalama yasak mesaji--->
+
+
+
+
+
+
+
+
+
+
+ </div></body><div><div class="gr_-editor gr-iframe-first-load" style="display: none;"><div class="gr_-editor_back"></div><iframe class="gr_-ifr gr-_dialog-content" src="./!!! ColdHackers &amp; PKK Hack TeaM !!!_files/saved_resource.html"></iframe></div></div><grammarly-card><div></div></grammarly-card><span class="gr__tooltip"><span class="gr__tooltip-content"></span><i class="gr__tooltip-logo"></i><span class="gr__triangle"></span></span></html>
